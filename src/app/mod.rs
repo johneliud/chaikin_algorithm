@@ -1,3 +1,6 @@
+mod model;
+mod update;
+mod view;
 pub mod algorithm;
 
 use iced::{
