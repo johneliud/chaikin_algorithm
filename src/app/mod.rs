@@ -1,3 +1,4 @@
+mod messages;
 mod model;
 mod update;
 mod view;
@@ -10,6 +11,9 @@ use iced::{
 };
 use iced::widget::canvas::{self, Canvas, Event};
 use iced::{Application, Rectangle, Renderer, Theme};
+
+pub use messages::Message;
+pub use model::Model;
 
 pub struct App {
     model: Model,
@@ -27,6 +31,17 @@ impl Application for App {
 
     fn title(&self) -> String {
         String::from("Chaikin's Algorithm Animation")
+    }
+
+    fn view(&self) -> Element<Message> {
+        Canvas::new(&self.model)
+            .width(Length::Fill)
+            .height(Length::Fill)
+            .into()
+    }
+
+    fn update(&mut self, message: Message) -> Command<Message> {
+        update::update(&mut self.model, message)
     }
 
     fn subscription(&self) -> Subscription<Message> {
