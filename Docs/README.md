@@ -11,9 +11,14 @@
 _In the realm of computer graphics, the pursuit of creating smooth, aesthetically pleasing curves from a set of points or a polyline has been a longstanding challenge._
 
 _Chaikin's algorithm, a seminal method devised to address this issue, has been a cornerstone in the field, renowned for its efficacy in refining and smoothing curves. This project undertakes the ambitious task of not only implementing Chaikin's algorithm but also presenting it in a visually captivating animation, thereby providing an immersive experience for the user._
+_In the realm of computer graphics, the pursuit of creating smooth, aesthetically pleasing curves from a set of points or a polyline has been a longstanding challenge._
+
+_Chaikin's algorithm, a seminal method devised to address this issue, has been a cornerstone in the field, renowned for its efficacy in refining and smoothing curves. This project undertakes the ambitious task of not only implementing Chaikin's algorithm but also presenting it in a visually captivating animation, thereby providing an immersive experience for the user._
 
 ## Project Overview
 
+_The project aims to provide a comprehensive and immersive experience for users by implementing Chaikin's algorithm and presenting it in an animation. By combining the algorithm's elegance with the visual appeal of an animation, the project offers a unique and engaging way to explore the concept of curve smoothing. The instrutions for the proect can be found [here](INSTRUCTIONS.md).
+At its core, Chaikin's algorithm operates by iteratively introducing new points along each line segment at 25% and 75% of the distance between the original points. This process, repeated over multiple iterations, yields a curve of remarkable smoothness, effectively mitigating the angularity of the original polyline. The algorithm's versatility and efficiency make it an indispensable tool in various applications, from graphic design to engineering, where the creation of smooth curves is paramount._
 _The project aims to provide a comprehensive and immersive experience for users by implementing Chaikin's algorithm and presenting it in an animation. By combining the algorithm's elegance with the visual appeal of an animation, the project offers a unique and engaging way to explore the concept of curve smoothing. The instrutions for the proect can be found [here](INSTRUCTIONS.md).
 At its core, Chaikin's algorithm operates by iteratively introducing new points along each line segment at 25% and 75% of the distance between the original points. This process, repeated over multiple iterations, yields a curve of remarkable smoothness, effectively mitigating the angularity of the original polyline. The algorithm's versatility and efficiency make it an indispensable tool in various applications, from graphic design to engineering, where the creation of smooth curves is paramount._
 
@@ -54,6 +59,9 @@ At its core, Chaikin's algorithm operates by iteratively introducing new points 
 
 ## Installation and Execution
 
+_For those interested in exploring the project's inner workings or contributing to its development, detailed installation instructions are provided._
+
+- _To instal and run the project, follow these steps:_
 _For those interested in exploring the project's inner workings or contributing to its development, detailed installation instructions are provided._
 
 - _To instal and run the project, follow these steps:_
