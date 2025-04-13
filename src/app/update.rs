@@ -6,6 +6,7 @@ pub fn update(model: &mut Model, message: Message) -> Command<Message> {
     match message {
         Message::MousePressed(position) => {
             model.points.push(position);
+            model.status_message.replace(String::new());
         }
         Message::RunChaikinAnimation => {
             if model.points.is_empty() {
@@ -13,6 +14,7 @@ pub fn update(model: &mut Model, message: Message) -> Command<Message> {
                 return Command::none();
             }
 
+            model.status_message.replace(String::new());
             if !*model.run_animation.borrow() {
                 model.run_animation.replace(true);
             }
@@ -43,6 +45,7 @@ pub fn update(model: &mut Model, message: Message) -> Command<Message> {
             model.chaikin_points.clear();
             model.current_iteration = 0;
             model.run_animation.replace(false);
+            model.status_message.replace("Set a new object.".to_string());
         }
         Message::MovePoint(position) => {
             if *model.dragging.borrow() {
