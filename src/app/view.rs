@@ -9,6 +9,12 @@ pub fn view(
 ) -> Vec<<Renderer as iced::widget::canvas::Renderer>::Geometry> {
     let mut frame = Frame::new(renderer, bounds.size());
 
+    frame.fill_rectangle(
+        Point::ORIGIN,
+        bounds.size(),
+        Color::BLACK,
+    );
+
     if !model.status_message.borrow().is_empty() {
         let status_text = Text {
             content: model.status_message.borrow().to_string(),
