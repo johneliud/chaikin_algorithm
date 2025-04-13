@@ -25,14 +25,17 @@ impl Application for App {
     type Flags = ();
     type Theme = Theme;
 
+    // Initializes the application with the default model state.
     fn new(_flags: ()) -> (Self, Command<Message>) {
         (Self { model: Model::default() }, Command::none())
     }
 
+    // Sets the title of the application window.
     fn title(&self) -> String {
         String::from("Chaikin's Algorithm Animation")
     }
 
+    // Defines the view of the application, rendering the canvas with the model's state.
     fn view(&self) -> Element<Message> {
         Canvas::new(&self.model)
             .width(Length::Fill)
@@ -40,10 +43,12 @@ impl Application for App {
             .into()
     }
 
+    // Updates the application state based on incoming messages.
     fn update(&mut self, message: Message) -> Command<Message> {
         update::update(&mut self.model, message)
     }
 
+    // Subscribes to events, such as time-based ticks for animations.
     fn subscription(&self) -> Subscription<Message> {
         if *self.model.run_animation.borrow() {
             iced::time::every(std::time::Duration::from_millis(250)).map(|_| Message::Tick)
@@ -56,6 +61,7 @@ impl Application for App {
 impl canvas::Program<Message> for Model {
     type State = ();
 
+    // Handles canvas-level events, such as mouse clicks, key presses, and cursor movements.
     fn update(
         &self,
         _state: &mut Self::State,
@@ -67,6 +73,7 @@ impl canvas::Program<Message> for Model {
         use keyboard::Key;
 
         match event {
+            // Handles mouse button presses.
             Event::Mouse(mouse::Event::ButtonPressed(Button::Left)) => {
                 if *self.control_pressed.borrow() {
                     self.dragging.replace(true);
@@ -89,6 +96,7 @@ impl canvas::Program<Message> for Model {
                     (canvas::event::Status::Ignored, None)
                 }
             }
+            // Handles key presses for actions like starting animations or quitting.
             Event::Keyboard(keyboard::Event::KeyPressed { key, .. }) => {
                 match key {
                     Key::Named(key::Named::Enter) => (canvas::event::Status::Captured, Some(Message::RunChaikinAnimation)),
@@ -101,6 +109,7 @@ impl canvas::Program<Message> for Model {
                     _ => (canvas::event::Status::Ignored, None),
                 }
             }
+            // Handles key releases, such as releasing the Control key.
             Event::Keyboard(keyboard::Event::KeyReleased { key, .. }) => {
                 if key == Key::Named(key::Named::Control) {
                     self.control_pressed.replace(false);
@@ -108,6 +117,7 @@ impl canvas::Program<Message> for Model {
                 }
                 (canvas::event::Status::Ignored, None)
             }
+            // Handles cursor movements for dragging points
             Event::Mouse(mouse::Event::CursorMoved { .. }) => {
                 if *self.dragging.borrow() {
                     let position = cursor.position_in(bounds).unwrap();
@@ -120,6 +130,7 @@ impl canvas::Program<Message> for Model {
         }
     }
 
+    // The `draw` function draws the canvas, rendering the current state of the model.
     fn draw(
         &self,
         _state: &Self::State,

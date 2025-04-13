@@ -2,8 +2,17 @@ use crate::app::{messages::Message, model::Model};
 use crate::app::algorithm::chaikin;
 use iced::Command;
 
+/* ===================================================================
+Updates the application state based on the received `Message`.
+
+# Parameters:
+- `model`: A mutable reference to the application's `Model`, representing its current state.
+- `message`: The `Message` enum variant that represents the event or action to process.
+# Returns:
+- A `Command<Message>` that can be used to trigger asynchronous actions or return no action (`Command::none()`).*/
 pub fn update(model: &mut Model, message: Message) -> Command<Message> {
     match message {
+        // Adds a new point to the canvas when the mouse is pressed.
         Message::MousePressed(position) => {
             model.points.push(position);
             model.show_instructions.replace(false);

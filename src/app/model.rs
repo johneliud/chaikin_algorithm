@@ -1,6 +1,9 @@
-use std::cell::RefCell;
 use iced::Point;
+use std::cell::RefCell;
 
+/* ===================================================
+The `Model` struct represents the application's state, including user-defined points,
+Chaikin-smoothed points, animation state, and user interaction flags.*/
 pub struct Model {
     pub points: Vec<Point>,
     pub chaikin_points: Vec<Point>,
@@ -13,6 +16,9 @@ pub struct Model {
     pub show_instructions: RefCell<bool>,
 }
 
+/*=================================================
+ Provides a default implementation for the `Model` struct, initializing all fields
+to their default values, such as empty vectors for points and default flags for user interactions.*/
 impl Default for Model {
     fn default() -> Self {
         Self {

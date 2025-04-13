@@ -1,5 +1,11 @@
 use iced::Point;
 
+/*======================================================================
+This function implements Chaikin's algorithm, a curve-smoothing technique.
+The `chaikin` function takes a list of points and a number of iterations as input.
+It recursively refines the polyline by introducing new points at 25% and 75% of the distance
+between consecutive points, creating a smoother curve with each iteration.
+The function ensures the first and last points remain unchanged to preserve the curve's endpoints.*/
 pub fn chaikin(points: &[Point], iterations: usize) -> Vec<Point> {
     if iterations == 0 {
         return points.to_vec();
