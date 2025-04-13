@@ -9,7 +9,7 @@ pub fn update(model: &mut Model, message: Message) -> Command<Message> {
         }
         Message::RunChaikinAnimation => {
             if model.points.is_empty() {
-                println!("No points to animate! Add points first.");
+                model.status_message.replace("No points to animate! Add points first.".to_string());
                 return Command::none();
             }
 
