@@ -29,8 +29,8 @@ pub fn view(
         let instructions = vec![
             "INSTRUCTIONS:",
             "- Left-click to add points", 
-            "- Press ENTER to start animation"
-            "- Hold CTRL + Left-click drag to move points",
+            "- Press ENTER to start animation",
+            "- Hold CTRL + Left-click drag to move points"
         ];
         
         for (i, line) in instructions.iter().enumerate() {
