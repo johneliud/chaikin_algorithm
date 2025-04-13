@@ -1,6 +1,6 @@
-## Chaikin
+# Chaikin
 
-### Instructions
+## Instructions
 
 Implement [Chaikin's](http://graphics.cs.ucdavis.edu/education/CAGDNotes/Chaikins-Algorithm/Chaikins-Algorithm.html) algorithm as a step by step animation.
 
@@ -10,7 +10,7 @@ You can see how the application should work [here](https://youtu.be/PbB2eKnA2QI)
 
 > Usage of Chaikin's algorithm is mandatory.
 
-#### Functionality
+### Functionality
 
 - The canvas must receive input from the mouse. The user must be able to use the left button to place control points for Chaikin's algorithm.
   
