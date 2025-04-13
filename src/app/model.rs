@@ -11,6 +11,7 @@ pub struct Model {
     pub dragging: RefCell<bool>,
     pub drag_point: RefCell<Option<(usize, Point)>>,
     pub status_message: RefCell<String>,
+    pub show_instructions: RefCell<bool>,
 }
 
 impl Default for Model {
@@ -25,6 +26,7 @@ impl Default for Model {
             dragging: RefCell::new(false),
             drag_point: RefCell::new(None),
             status_message: RefCell::new(String::new()),
+            show_instructions: RefCell::new(true),
         }
     }
 }

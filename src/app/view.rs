@@ -15,6 +15,26 @@ pub fn view(
         Color::BLACK,
     );
 
+    if model.points.is_empty() && *model.show_instructions.borrow() {
+        let instructions = vec![
+            "INSTRUCTIONS:",
+            "- Hold CTRL + Left-click drag to move points",
+            "- Left-click to add points", 
+            "- Press ENTER to start animation"
+        ];
+        
+        for (i, line) in instructions.iter().enumerate() {
+            let text = Text {
+                content: line.to_string(),
+                position: Point::new(20.0, 30.0 + (i as f32 * 20.0)),
+                color: Color::from_rgb8(250, 236, 112),
+                size: iced::Pixels(14.0),
+                ..Text::default()
+            };
+            frame.fill_text(text);
+        }
+    }
+
     if !model.status_message.borrow().is_empty() {
         let status_text = Text {
             content: model.status_message.borrow().to_string(),

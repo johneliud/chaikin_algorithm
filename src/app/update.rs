@@ -7,7 +7,9 @@ pub fn update(model: &mut Model, message: Message) -> Command<Message> {
         Message::MousePressed(position) => {
             model.points.push(position);
             model.status_message.replace(String::new());
+            model.show_instructions.replace(false);
         }
+
         Message::RunChaikinAnimation => {
             if model.points.is_empty() {
                 model.status_message.replace("No points to animate! Add points first.".to_string());
@@ -19,6 +21,7 @@ pub fn update(model: &mut Model, message: Message) -> Command<Message> {
                 model.run_animation.replace(true);
             }
         }
+
         Message::Tick => {
             if *model.run_animation.borrow() {
                 if model.current_iteration < model.iteration && model.points.len() > 1 {
@@ -37,9 +40,11 @@ pub fn update(model: &mut Model, message: Message) -> Command<Message> {
                 }
             }
         }
+
         Message::Quit => {
             std::process::exit(0);
         }
+
         Message::Reset => {
             model.points.clear();
             model.chaikin_points.clear();
@@ -47,6 +52,7 @@ pub fn update(model: &mut Model, message: Message) -> Command<Message> {
             model.run_animation.replace(false);
             model.status_message.replace("Set a new object.".to_string());
         }
+        
         Message::MovePoint(position) => {
             if *model.dragging.borrow() {
                 if let Some((index, _)) = model.drag_point.borrow().as_ref() {
