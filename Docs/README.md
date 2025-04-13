@@ -29,7 +29,6 @@ At its core, Chaikin's algorithm operates by iteratively introducing new points 
   - [Introduction](#introduction)
   - [Project Overview](#project-overview)
   - [📚 Table of Contents](#-table-of-contents)
-  - [Installation and Execution](#installation-and-execution)
   - [User Interation](#user-interation)
     - [Creating a point](#creating-a-point)
     - [Animation](#animation)
@@ -37,6 +36,15 @@ At its core, Chaikin's algorithm operates by iteratively introducing new points 
   - [Implementation Details (How it Works)](#implementation-details-how-it-works)
     - [Quick Basic controls](#quick-basic-controls)
     - [📁 Project Structure](#-project-structure)
+  - [⚙️ Quick Start](#️-quick-start)
+    - [1. Clone and Build](#1-clone-and-build)
+    - [2. Run the Program.](#2-run-the-program)
+  - [🧪 Usage](#-usage)
+    - [💡 Default Run](#-default-run)
+    - [🧪 Run with Debug Info](#-run-with-debug-info)
+    - [🧹 Clean Build Files](#-clean-build-files)
+    - [📦 Rebuild Everything](#-rebuild-everything)
+    - [🧪 Run tests](#-run-tests)
     - [💻 Code Venture](#-code-venture)
       - [📄 main.rs](#-mainrs)
       - [📄 lib.rs](#-librs)
@@ -57,20 +65,6 @@ At its core, Chaikin's algorithm operates by iteratively introducing new points 
   - [Contributions 🤝](#contributions-)
     - [Contributors 🌟](#contributors-)
 
-## Installation and Execution
-
-_For those interested in exploring the project's inner workings or contributing to its development, detailed installation instructions are provided._
-
-- _To instal and run the project, follow these steps:_
-_For those interested in exploring the project's inner workings or contributing to its development, detailed installation instructions are provided._
-
-- _To instal and run the project, follow these steps:_
-
-```sh
-git clone https://github.com/johneliud/chaikin_algorithm.git
-cd chaikin_algorithm
-cargo run
-```
 
 ---
 
@@ -133,9 +127,77 @@ _This document outlines the purpose and organization of each file and directory 
 │     └──main.rs
 ├── .gitignore
 ├── Cargo.lock
-└── Cargo.toml
+├── Cargo.toml
+└── Makefile
 
 ```
+
+---
+
+## ⚙️ Quick Start
+
+### 1. Clone and Build
+
+```bash
+git clone https://learn.zone01kisumu.ke/git/johnodhiambo0/chaikin.git
+cd chaikin
+make setup
+```
+
+### 2. Run the Program.
+
+```sh
+make run
+```
+
+- No need to remember long Cargo commands anymore — we've got a Makefile for that!
+
+## 🧪 Usage
+
+<div style="display: flex; gap: 11px;">
+<div style="flex: 1">
+
+### 💡 Default Run
+
+```sh
+make run
+```
+
+</div>  <div style="border-left: 1px solid #ccc; height: auto;"></div> <div style="flex: 1">
+
+### 🧪 Run with Debug Info
+
+```sh
+make debug
+```
+
+</div>  <div style="border-left: 1px solid #ccc; height: auto;"></div> <div style="flex: 1">
+
+### 🧹 Clean Build Files
+
+```sh
+make clean
+```
+
+</div>  <div style="border-left: 1px solid #ccc; height: auto;"></div> <div style="flex: 1">
+
+### 📦 Rebuild Everything
+
+```sh
+make rebuild
+```
+
+</div>  <div style="border-left: 1px solid #ccc; height: auto;"></div> <div style="flex: 1">
+
+### 🧪 Run tests
+
+```sh
+make test
+```
+
+</div> </div>
+
+- The Makefile simplifies building, running, and cleaning up. Modify it to extend functionality as needed.
 
 ---
 
