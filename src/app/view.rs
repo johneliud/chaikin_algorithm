@@ -28,7 +28,7 @@ pub fn view(
 
     // Draw control points
     for point in &model.points {
-        let circle = Path::new(|b| b.circle(*point, 2.5));
+        let circle = Path::new(|b| b.circle(*point, 5.0));
         frame.fill(&circle, Color::from_rgb8(57, 82, 70));
     }
 
