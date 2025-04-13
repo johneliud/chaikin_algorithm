@@ -1,1 +1,5 @@
+# Ignore the build files
 /target
+
+# Ignore the Cargo files
+Cargo.lock
