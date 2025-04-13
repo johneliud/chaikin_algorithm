@@ -44,7 +44,7 @@ pub fn view(
         let stroke = Stroke {
             style: Style::Solid(Color::from_rgb8(57, 82, 70)),
             line_dash: LineDash::default(),
-            width: 1.0,
+            width: 2.0,
             line_cap: stroke::LineCap::Round,
             line_join: LineJoin::Round,
         };
