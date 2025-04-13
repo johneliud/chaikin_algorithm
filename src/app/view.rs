@@ -9,11 +9,17 @@ pub fn view(
 ) -> Vec<<Renderer as iced::widget::canvas::Renderer>::Geometry> {
     let mut frame = Frame::new(renderer, bounds.size());
 
+    frame.fill_rectangle(
+        Point::ORIGIN,
+        bounds.size(),
+        Color::BLACK,
+    );
+
     if !model.status_message.borrow().is_empty() {
         let status_text = Text {
             content: model.status_message.borrow().to_string(),
             position: Point::new(10.0, 20.0),
-            color: Color::from_rgb8(255, 0, 0), 
+            color: Color::from_rgb8(255, 0, 0),
             size: iced::Pixels(16.0),
             ..Text::default()
         };
@@ -22,8 +28,8 @@ pub fn view(
 
     // Draw control points
     for point in &model.points {
-        let circle = Path::new(|b| b.circle(*point, 2.5));
-        frame.fill(&circle, Color::BLACK);
+        let circle = Path::new(|b| b.circle(*point, 5.0));
+        frame.fill(&circle, Color::from_rgb8(57, 82, 70));
     }
 
     // Draw Chaikin curve
@@ -36,9 +42,9 @@ pub fn view(
         });
 
         let stroke = Stroke {
-            style: Style::Solid(Color::BLACK),
+            style: Style::Solid(Color::from_rgb8(57, 82, 70)),
             line_dash: LineDash::default(),
-            width: 1.0,
+            width: 2.0,
             line_cap: stroke::LineCap::Round,
             line_join: LineJoin::Round,
         };
