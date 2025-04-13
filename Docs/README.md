@@ -2,9 +2,9 @@
 
 ## Demo 🎥
 
-<p align="center">
-  <img src="media/chaiki_algorithm_demo.gif" alt="Demo" width="85%" />
-</p>
+<div style="align: center; justify-content: center;">
+  <img src="media/chaiki_algorithm_demo.gif" alt="Demo" width="100%" />
+</div>
 
 ## Introduction
 
