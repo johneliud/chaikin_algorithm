@@ -1,5 +1,9 @@
 # Chaikin's Algorithm Animation Project: An Exquisite Implementation of a Timeless Concept
 
+## Demo 🎥
+
+![Demo](media/chaiki_algorithm_demo.gif)
+
 ## Introduction
 
 _In the realm of computer graphics, the pursuit of creating smooth, aesthetically pleasing curves from a set of points or a polyline has been a longstanding challenge._
@@ -14,6 +18,7 @@ At its core, Chaikin's algorithm operates by iteratively introducing new points 
 ## 📚 Table of Contents
 
 - [Chaikin's Algorithm Animation Project: An Exquisite Implementation of a Timeless Concept](#chaikins-algorithm-animation-project-an-exquisite-implementation-of-a-timeless-concept)
+  - [Demo 🎥](#demo-)
   - [Introduction](#introduction)
   - [Project Overview](#project-overview)
   - [📚 Table of Contents](#-table-of-contents)
