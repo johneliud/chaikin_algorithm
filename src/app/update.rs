@@ -8,6 +8,11 @@ pub fn update(model: &mut Model, message: Message) -> Command<Message> {
             model.points.push(position);
         }
         Message::RunChaikinAnimation => {
+            if model.points.is_empty() {
+                println!("No points to animate! Add points first.");
+                return Command::none();
+            }
+
             if !*model.run_animation.borrow() {
                 model.run_animation.replace(true);
             }
