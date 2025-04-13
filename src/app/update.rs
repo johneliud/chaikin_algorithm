@@ -17,7 +17,7 @@ pub fn update(model: &mut Model, message: Message) -> Command<Message> {
             model.points.push(position);
             model.show_instructions.replace(false);
         }
-
+        // Starts the Chaikin animation if there are points to animate.
         Message::RunChaikinAnimation => {
             if model.points.is_empty() {
                 model.show_instructions.replace(true);
@@ -28,7 +28,7 @@ pub fn update(model: &mut Model, message: Message) -> Command<Message> {
                 model.run_animation.replace(true);
             }
         }
-
+        // Handles animation ticks, updating the Chaikin-smoothed points for each iteration.
         Message::Tick => {
             if *model.run_animation.borrow() {
                 if model.current_iteration < model.iteration && model.points.len() > 1 {
@@ -47,11 +47,11 @@ pub fn update(model: &mut Model, message: Message) -> Command<Message> {
                 }
             }
         }
-
+        // Exits the application.
         Message::Quit => {
             std::process::exit(0);
         }
-
+        // Resets the canvas, clearing all points and resetting the animation state.
         Message::Reset => {
             model.points.clear();
             model.chaikin_points.clear();
@@ -59,7 +59,7 @@ pub fn update(model: &mut Model, message: Message) -> Command<Message> {
             model.run_animation.replace(false);
             model.show_instructions.replace(true);
         }
-        
+        // Updates the position of a point being dragged in real time.
         Message::MovePoint(position) => {
             if *model.dragging.borrow() {
                 if let Some((index, _)) = model.drag_point.borrow().as_ref() {
