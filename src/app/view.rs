@@ -35,17 +35,6 @@ pub fn view(
         }
     }
 
-    if !model.status_message.borrow().is_empty() {
-        let status_text = Text {
-            content: model.status_message.borrow().to_string(),
-            position: Point::new(10.0, 20.0),
-            color: Color::from_rgb8(255, 0, 0),
-            size: iced::Pixels(16.0),
-            ..Text::default()
-        };
-        frame.fill_text(status_text);
-    }
-
     // Draw control points
     for point in &model.points {
         let circle = Path::new(|b| b.circle(*point, 5.0));

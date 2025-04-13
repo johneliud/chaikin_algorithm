@@ -10,7 +10,6 @@ pub struct Model {
     pub control_pressed: RefCell<bool>,
     pub dragging: RefCell<bool>,
     pub drag_point: RefCell<Option<(usize, Point)>>,
-    pub status_message: RefCell<String>,
     pub show_instructions: RefCell<bool>,
 }
 
@@ -25,7 +24,6 @@ impl Default for Model {
             control_pressed: RefCell::new(false),
             dragging: RefCell::new(false),
             drag_point: RefCell::new(None),
-            status_message: RefCell::new(String::new()),
             show_instructions: RefCell::new(true),
         }
     }
