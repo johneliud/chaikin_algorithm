@@ -2,7 +2,9 @@
 
 ## Demo 🎥
 
-![Demo](media/chaiki_algorithm_demo.gif)
+<p align="center">
+  <img src="media/chaiki_algorithm_demo.gif" alt="Demo" width="85%" />
+</p>
 
 ## Introduction
 
