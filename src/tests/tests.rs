@@ -199,44 +199,6 @@ fn extract_path_points(_path: &Path) -> Option<Vec<Point>> {
 }
 
 /*
-Tests that when the status message is not empty, the view function adds a text operation to the frame. It creates a model with a non-empty status message, calls the view function, and checks that a FillText operation was added to the frame with the correct text content, position, and color.
-*/
-// #[test]
-// fn test_view_draws_status_message() {
-//     // Create a mock renderer
-//     let renderer = MockRenderer::new();
-
-//     // Create a model with a status message
-//     let mut model = Model::default();
-//     model.status_message = RefCell::new(String::from("Test Status Message"));
-
-//     // Call the view function
-//     let _view_fn = chaikin_algorithm::app::view::view;
-//     let _bounds = Rectangle::new(Point::new(0.0, 0.0), Size::new(800.0, 600.0));
-
-//     let mut mock_frame = MockFrame::new(&renderer);
-//     mock_frame.fill_text(Text {
-//         content: model.status_message.borrow().to_string(), 
-//         position: Point::new(10.0, 20.0),
-//         color: Color::from_rgb8(255, 0, 0),
-//         size: iced::Pixels(16.0),
-//         ..Text::default()
-//     });
-
-//     // Verify the text operation was added
-//     let operations = renderer.get_operations();
-//     assert!(operations.iter().any(|op| {
-//         if let FrameOperation::FillText(content, position, color) = op {
-//             content == "Test Status Message"
-//                 && *position == Point::new(10.0, 20.0)
-//                 && *color == Color::from_rgb8(255, 0, 0)
-//         } else {
-//             false
-//         }
-//     }));
-// }
-
-/*
 Tests that when there are points in the model, the view function adds a circle operation for each point. It creates a model with two points, calls the view function, and checks that two FillCircle operations were added to the frame with the correct positions, radius, and color.
 */
 #[test]
@@ -315,94 +277,6 @@ fn test_view_draws_chaikin_curve() {
         }
     }));
 }
-
-/*
-Tests that when the model has both status message, control points, and chaikin points, the view function adds all the necessary operations to the frame. It creates a model with all these elements, calls the view function, and checks that all the expected operations were added to the frame.
-*/
-// #[test]
-// fn test_view_integration() {
-//     // Create a mock renderer
-//     let renderer = MockRenderer::new();
-
-//     // Create a model with all elements
-//     let mut model = Model::default();
-//     model.status_message = RefCell::new(String::from("Integration Test"));
-//     model.points = vec![Point::new(50.0, 50.0), Point::new(150.0, 150.0)];
-//     model.chaikin_points = vec![
-//         Point::new(0.0, 0.0),
-//         Point::new(50.0, 50.0),
-//         Point::new(100.0, 0.0),
-//     ];
-
-//     // Call the view function
-//     let _view_fn = chaikin_algorithm::app::view::view;
-//     let _bounds = Rectangle::new(Point::new(0.0, 0.0), Size::new(800.0, 600.0));
-
-//     // Set up the mock frame with all operations
-//     let mut mock_frame = MockFrame::new(&renderer);
-
-//     // Add status text
-//     mock_frame.fill_text(Text {
-//         content: model.status_message.borrow().to_string(),
-//         position: Point::new(10.0, 20.0),
-//         color: Color::from_rgb8(255, 0, 0),
-//         size: iced::Pixels(16.0),
-//         ..Text::default()
-//     });
-
-//     // Add control points
-//     for point in &model.points {
-//         mock_frame.fill(&Path::new(|b| b.circle(*point, 2.5)), Color::BLACK);
-//     }
-
-//     // Add chaikin curve
-//     let path = Path::new(|path_builder| {
-//         path_builder.move_to(model.chaikin_points[0]);
-//         for point in &model.chaikin_points {
-//             path_builder.line_to(*point);
-//         }
-//     });
-
-//     mock_frame.stroke(
-//         &path,
-//         Stroke {
-//             style: iced::widget::canvas::Style::Solid(Color::BLACK),
-//             line_dash: iced::widget::canvas::LineDash::default(),
-//             width: 1.0,
-//             line_cap: iced::widget::canvas::stroke::LineCap::Round,
-//             line_join: iced::widget::canvas::LineJoin::Round,
-//         },
-//     );
-
-//     // Verify all operations were added
-//     let operations = renderer.get_operations();
-
-//     // Should have 4 operations: 1 text, 2 circles, 1 path
-//     assert_eq!(operations.len(), 4);
-
-//     // Check text operation
-//     assert!(operations.iter().any(|op| {
-//         if let FrameOperation::FillText(content, _, _) = op {
-//             content == "Integration Test"
-//         } else {
-//             false
-//         }
-//     }));
-
-//     // Check circle operations
-//     let circle_ops = operations
-//         .iter()
-//         .filter(|op| matches!(op, FrameOperation::FillCircle(_, _, _)))
-//         .collect::<Vec<_>>();
-//     assert_eq!(circle_ops.len(), 2);
-
-//     // Check path operation
-//     assert!(
-//         operations
-//             .iter()
-//             .any(|op| { matches!(op, FrameOperation::StrokePath(_, _, _)) })
-//     );
-// }
 
 /*
 Tests that when the model has no status message, control points, or chaikin points, the view function still returns a valid geometry. It creates an empty model, calls the view function, and checks that no operations were added to the frame.
