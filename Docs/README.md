@@ -2,7 +2,7 @@
 
 ## Demo 🎥
 
-<div style="align: center; justify-content: center;">
+<div style="align-items: center; justify-content: center;">
   <img src="media/chaiki_algorithm_demo.gif" alt="Demo" width="85%" />
 </div>
 
