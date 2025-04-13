@@ -1,7 +1,7 @@
 mod messages;
-mod model;
+pub mod model;
 mod update;
-mod view;
+pub mod view;
 pub mod algorithm;
 
 use iced::{
