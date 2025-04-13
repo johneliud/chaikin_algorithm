@@ -15,16 +15,15 @@ pub fn update(model: &mut Model, message: Message) -> Command<Message> {
         // Adds a new point to the canvas when the mouse is pressed.
         Message::MousePressed(position) => {
             model.points.push(position);
-            model.status_message.replace(String::new());
+            model.show_instructions.replace(false);
         }
         // Starts the Chaikin animation if there are points to animate.
         Message::RunChaikinAnimation => {
             if model.points.is_empty() {
-                model.status_message.replace("No points to animate! Add points first.".to_string());
+                model.show_instructions.replace(true);
                 return Command::none();
             }
 
-            model.status_message.replace(String::new());
             if !*model.run_animation.borrow() {
                 model.run_animation.replace(true);
             }
@@ -58,7 +57,7 @@ pub fn update(model: &mut Model, message: Message) -> Command<Message> {
             model.chaikin_points.clear();
             model.current_iteration = 0;
             model.run_animation.replace(false);
-            model.status_message.replace("Set a new object.".to_string());
+            model.show_instructions.replace(true);
         }
         // Updates the position of a point being dragged in real time.
         Message::MovePoint(position) => {
