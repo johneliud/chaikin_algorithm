@@ -108,7 +108,7 @@ _This document outlines the purpose and organization of each file and directory 
 .
 ├── Docs/
 │    ├── media/
-│    |     └── chaikin_algorithm_demo.gif
+│    │     └── chaikin_algorithm_demo.gif
 │    ├── CODE_OF_CONDUCT.md
 │    ├── CONTRIBUTING.md
 │    ├── INSTRUCTIONS.md
@@ -116,22 +116,22 @@ _This document outlines the purpose and organization of each file and directory 
 │    └── README.md
 │
 ├── src/
-│     ├── app/
-│     │   ├── algorithm/
-│     │   │     ├── chaikin.rs
-│     │   │     └── mod.rs
-│     │   ├── messages.rs
-│     │   ├── mod.rs
-│     │   ├── model.rs
-│     │   ├── update.rs
-│     │   ├── view.rs
-│     ├──tests/
-│     │   └── tests.rs
-│     ├── lib.rs
-│     └──main.rs
-├── .gitignore
-├── Cargo.toml
-└── Makefile
+│    ├── app/
+│    │   ├── algorithm/
+│    │   │         ├── chaikin.rs
+│    │   │         └── mod.rs
+│    │   ├── messages.rs
+│    │   ├── mod.rs
+│    │   ├── model.rs
+│    │   ├── update.rs
+│    │   ├── view.rs
+│    ├──tests/
+│    │   └── tests.rs
+│    ├── lib.rs
+│    └── main.rs
+├──── .gitignore
+├──── Cargo.toml
+└──── Makefile
 
 ```
 
@@ -383,7 +383,7 @@ _If you wish to customize the appearance of the application, such as changing th
 frame.fill_rectangle(
     Point::ORIGIN,
     bounds.size(),
-    Color::BLACK, //change here
+    Color::BLACK, // replace this line with Color::from_rgb8(255, 192, 203)
 );
 ```
 
@@ -459,6 +459,14 @@ cargo test
 ```
 
 _This will execute the test cases and report any failures or errors._
+
+## Notice
+
+_It is important to note tha if you encounter the display like the screenshot like the one below. Regard updating your font to `monospaced`_
+
+<div>
+  <img src="media/font_issues.png">
+</div>
 
 ## Conclusion
 

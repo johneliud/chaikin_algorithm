@@ -1,6 +1,6 @@
 # MIT License
 
-_Copyright &copy; 2025 Adioz Daniel, John Elilud, and Raymond Martin_
+_Copyright &copy; 2025 Adioz Daniel, John Eliud, and Raymond Martin_
 
 ```sh
 Permission is hereby granted, free of charge, to any person obtaining a copy
