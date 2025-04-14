@@ -107,26 +107,29 @@ _This document outlines the purpose and organization of each file and directory 
 ```sh
 .
 ├── Docs/
+│    ├── media/
+│    |     └── chaikin_algorithm_demo.gif
+│    ├── CODE_OF_CONDUCT.md
+│    ├── CONTRIBUTING.md
 │    ├── INSTRUCTIONS.md
 │    ├── LICENSE.md
 │    └── README.md
 │
 ├── src/
 │     ├── app/
-│     │   ├── mod.rs
+│     │   ├── algorithm/
+│     │   │     ├── chaikin.rs
+│     │   │     └── mod.rs
 │     │   ├── messages.rs
+│     │   ├── mod.rs
 │     │   ├── model.rs
 │     │   ├── update.rs
 │     │   ├── view.rs
-│     │   └── algorithm/
-│     │       ├── mod.rs
-│     │       └── chaikin.rs
 │     ├──tests/
 │     │   └── tests.rs
 │     ├── lib.rs
 │     └──main.rs
 ├── .gitignore
-├── Cargo.lock
 ├── Cargo.toml
 └── Makefile
 
