@@ -27,10 +27,12 @@ pub fn view(
      // Display a status message if it exists.
     if model.points.is_empty() && *model.show_instructions.borrow() {
         let instructions = vec![
-            "INSTRUCTIONS:",
+            "HOW TO USE THIS APPLICATION:",
             "- Left-click to add points", 
             "- Press ENTER to start animation",
-            "- Hold CTRL + Left-click drag to move points"
+            "- Hold CTRL + Left-click drag to move points",
+            "- Press R to reset this workspace",
+            "- Press ESCAPE to exit this application"
         ];
         
         for (i, line) in instructions.iter().enumerate() {
