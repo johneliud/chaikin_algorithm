@@ -15,6 +15,7 @@ pub struct Model {
     pub drag_point: RefCell<Option<(usize, Point)>>,
     pub show_instructions: RefCell<bool>,
     pub show_error: RefCell<bool>,
+    pub show_help: RefCell<bool>,
 }
 
 /*=================================================
@@ -33,6 +34,7 @@ impl Default for Model {
             drag_point: RefCell::new(None),
             show_instructions: RefCell::new(true),
             show_error: RefCell::new(false),
+            show_help: RefCell::new(false),
         }
     }
 }

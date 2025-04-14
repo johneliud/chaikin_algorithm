@@ -25,6 +25,24 @@ pub fn view(
     );
 
      // Display a status message if it exists.
+     if *model.show_help.borrow() {
+        let instructions = vec![
+            "CONTROL A POINT POSITION IN REAL-TIME:",
+            "- Hold CTRL + Left-click drag to move the point to a new location",
+        ];
+        
+        for (i, line) in instructions.iter().enumerate() {
+            let text = Text {
+                content: line.to_string(),
+                position: Point::new(20.0, 30.0 + (i as f32 * 20.0)),
+                color: Color::from_rgb8(138, 135, 135),
+                size: iced::Pixels(14.0),
+                ..Text::default()
+            };
+            frame.fill_text(text);
+        }
+    }
+
     if *model.show_instructions.borrow() {
         let instructions = vec![
             "HOW TO USE THIS APPLICATION:",
