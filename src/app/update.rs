@@ -60,6 +60,7 @@ pub fn update(model: &mut Model, message: Message) -> Command<Message> {
             model.current_iteration = 0;
             model.run_animation.replace(false);
             model.show_instructions.replace(true);
+            model.show_error.replace(false);
         }
         // Updates the position of a point being dragged in real time.
         Message::MovePoint(position) => {
