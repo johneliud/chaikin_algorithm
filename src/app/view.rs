@@ -27,7 +27,7 @@ pub fn view(
      // Display a status message if it exists.
      if *model.show_help.borrow() {
         let instructions = vec![
-            "CONTROL A POINT POSITION IN REAL-TIME:",
+            "CONTROL A POINT POSITION IN REAL-TIME DURING ANIMATION:",
             "- Hold CTRL + Left-click drag to move the point to a new location",
         ];
         
