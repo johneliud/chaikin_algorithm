@@ -108,7 +108,8 @@ _This document outlines the purpose and organization of each file and directory 
 .
 ├── Docs/
 │    ├── media/
-│    │     └── chaikin_algorithm_demo.gif
+│    │     ├──  chaikin_algorithm_demo.gif
+│    │     └──  font_issue.jpg
 │    ├── CODE_OF_CONDUCT.md
 │    ├── CONTRIBUTING.md
 │    ├── INSTRUCTIONS.md
