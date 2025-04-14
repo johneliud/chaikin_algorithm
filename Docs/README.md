@@ -202,6 +202,16 @@ make test
 
 - The Makefile simplifies building, running, and cleaning up. Modify it to extend functionality as needed.
 
+## Notice
+
+_It is important to note that if you encounter the display like the screenshot like the one below. Regard updating your font to `monospaced`_
+_The image is the display of the application run on `jetbrains` custom font. Custom fonts might not work with the application!_
+_If you have custom fonts used widely for your computer, consider using `monospaced`_
+
+<div style="width: 600px; align-items: center; justify-content: center;">
+  <img src="media/font_issue.jpg">
+</div>
+
 ---
 
 ### 💻 Code Venture
@@ -459,14 +469,6 @@ cargo test
 ```
 
 _This will execute the test cases and report any failures or errors._
-
-## Notice
-
-_It is important to note tha if you encounter the display like the screenshot like the one below. Regard updating your font to `monospaced`_
-
-<div>
-  <img src="media/font_issues.png">
-</div>
 
 ## Conclusion
 
