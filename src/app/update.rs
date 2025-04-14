@@ -16,11 +16,13 @@ pub fn update(model: &mut Model, message: Message) -> Command<Message> {
         Message::MousePressed(position) => {
             model.points.push(position);
             model.show_instructions.replace(false);
+            model.show_error.replace(false);
         }
         // Starts the Chaikin animation if there are points to animate.
         Message::RunChaikinAnimation => {
             if model.points.is_empty() {
-                model.show_instructions.replace(true);
+                model.show_instructions.replace(false);
+                model.show_error.replace(true);
                 return Command::none();
             }
 

@@ -25,7 +25,7 @@ pub fn view(
     );
 
      // Display a status message if it exists.
-    if model.points.is_empty() && *model.show_instructions.borrow() {
+    if *model.show_instructions.borrow() {
         let instructions = vec![
             "HOW TO USE THIS APPLICATION:",
             "- Left-click to add points", 
@@ -40,6 +40,24 @@ pub fn view(
                 content: line.to_string(),
                 position: Point::new(20.0, 30.0 + (i as f32 * 20.0)),
                 color: Color::from_rgb8(250, 236, 112),
+                size: iced::Pixels(14.0),
+                ..Text::default()
+            };
+            frame.fill_text(text);
+        }
+    }
+
+    if model.points.is_empty() && *model.show_error.borrow() {
+        let instructions = vec![
+            "😕 Oops! you forgot to draw points",
+            "Left-click to add points or Press R to reset this workspace", 
+        ];
+        
+        for (i, line) in instructions.iter().enumerate() {
+            let text = Text {
+                content: line.to_string(),
+                position: Point::new(20.0, 30.0 + (i as f32 * 20.0)),
+                color: Color::from_rgb8(250, 87, 75),
                 size: iced::Pixels(14.0),
                 ..Text::default()
             };
