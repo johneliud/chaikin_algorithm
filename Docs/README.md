@@ -345,7 +345,6 @@ _Declares the app module and makes it public—accessible from other modules or 
 | `frame.stroke(...)`                   | Renders the Chaikin path with the defined stroke style.                |
 | `frame.into_geometry()`               | Converts the frame into drawable geometry for the canvas.              |
 
-#### 📄 src/app/algorithms/chaikin.rsview.rs
 
 #### 📄 src/app/algorithm/chaikin.rs
 
